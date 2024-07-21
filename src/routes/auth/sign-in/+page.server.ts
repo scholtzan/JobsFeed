@@ -34,7 +34,6 @@ export const actions = {
 
 		try {
 			const email = form.data.email.toLowerCase();
-			console.log(await new Argon2id().hash(form.data.password));
 			const existingUser = await getUserByEmail(email);
 			if (!existingUser) {
 				return setError(form, 'The email or password is incorrect.');
